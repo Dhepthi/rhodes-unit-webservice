@@ -29,7 +29,7 @@ def search_callback
   if status == "complete"
   data = Unit.find_all
    data.each do |val|
-    Alert.show_popup("The Converted value is #{i[:change_length_unit_result]}")
+    Alert.show_popup("The Converted value is #{val[:change_length_unit_result]}")
    end 
    WebView.navigate(url_for :action => :index)
   end
