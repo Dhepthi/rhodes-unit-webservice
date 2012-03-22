@@ -1,0 +1,53 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Call Webservice</h1>
+    <% if SyncEngine::logged_in > 0 %>
+        <a href="<%= url_for :controller => :Settings, :action => :logout %>" class="ui-btn-right" data-icon="star">Logout</a>
+    <% else %>
+        <a href="<%= url_for :controller => :Settings, :action => :login %>" class="ui-btn-right" data-icon="star">Login</a>
+    <% end %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :search %>">
+  
+        <div data-role="fieldcontain">
+ <label for="unit[value]" class="fieldLabel">Value </label>
+ <input type="text" id="unit[value]" name="unit[value]" <%= placeholder("Value") %> />
+        </div>
+        
+          <div data-role="fieldcontain">
+  <label for="unit[from]" class="fieldLabel">From</label>
+              <select id="unit[from]" name="unit[from]">
+                 <option value="Centimeters">Centimeters</option>
+                <option value="Inches">Inches</option>
+                <option value="Feet">Feet</option>
+               <option value="Yards">Yards</option>
+               <option value="Meters">Meters</option>
+               <option value="Kilometers">Kilometers</option>
+               <option value="Miles">Miles</option>
+             </select>
+           </div>
+      
+          <div data-role="fieldcontain">
+            <label for="unit[to]" class="fieldLabel">To</label>
+  
+              <select id="unit[to]" name="unit[to]">
+                 <option value="Centimeters">Centimeters</option>
+                <option value="Inches">Inches</option>
+                <option value="Feet">Feet</option>
+               <option value="Yards">Yards</option>
+               <option value="Meters">Meters</option>
+               <option value="Kilometers">Kilometers</option>
+               <option value="Miles">Miles</option>
+             </select> 
+
+             </div>     
+     
+      <input type="submit" value="Calculate"/>
+    </form>
+  </div>
+
+
+</div>

@@ -1,0 +1,25 @@
+#sdk: "/Users/Sarathy/.rvm/gems/ruby-1.9.2-p290/gems/rhodes-3.2.3"
+sdkversion: 3.2.1
+name: rhodes-unit-webservice
+version: 1.0
+vendor: rhomobile
+build: debug
+bbver: 4.6
+wmsdk: "Windows Mobile 6 Professional SDK (ARMV4I)"
+applog: rholog.txt
+iphone:
+  configuration: Release
+  sdk: iphonesimulator5.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.rhodes-unit-webservice
+  BundleURLScheme: rhodes-unit-webservice
+wp:
+  productid: '8c3ee570-55dc-012f-400a-001f5bcd07d3'
+symbian:
+  uid: '0xe01cf855'
+android:
+  version: 2.1
+
+extensions: ["json", "another-extension"]

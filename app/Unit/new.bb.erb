@@ -1,0 +1,33 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1>New Unit</h1>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @unit.object %>"/>
+      <table>
+          
+            <tr>
+                <td class="itemLabel">Value: </td>
+                <td class="itemValue"><input type="text" name="unit[value]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">From: </td>
+                <td class="itemValue"><input type="text" name="unit[from]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">To: </td>
+                <td class="itemValue"><input type="text" name="unit[to]"/></td>
+            </tr>
+          
+      </table>
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

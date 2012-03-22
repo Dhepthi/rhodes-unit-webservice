@@ -1,0 +1,36 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @unit.value %></h1>
+    <a href="<%= url_for :action => :show, :id => @unit.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @unit.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @unit.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="unit[value]" class="fieldLabel">Value</label>
+            <input type="text" id="unit[value]" name="unit[value]" value="<%= @unit.value %>" <%= placeholder( "Value" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="unit[from]" class="fieldLabel">From</label>
+            <input type="text" id="unit[from]" name="unit[from]" value="<%= @unit.from %>" <%= placeholder( "From" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="unit[to]" class="fieldLabel">To</label>
+            <input type="text" id="unit[to]" name="unit[to]" value="<%= @unit.to %>" <%= placeholder( "To" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>
